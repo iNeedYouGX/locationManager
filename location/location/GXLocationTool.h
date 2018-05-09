@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GXSingleton.h"
+
 #import <CoreLocation/CoreLocation.h>
 
 typedef void (^SuccessBlock)(CLLocationCoordinate2D coordinator, CLPlacemark *placemark);
 
 @interface GXLocationTool : NSObject
-GXSingletonH(LocationTool)
++ (instancetype)shareLocationTool;
 - (void)getCurrentLocation:(SuccessBlock)block;
 @end

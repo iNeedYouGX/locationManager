@@ -16,7 +16,42 @@
 
 
 @implementation GXLocationTool
-GXSingletonM(LocationTool)
+
+static id _instance;//全局的变量, static是为了只能让本文件来访问, 防止extern
+/*
+ * 重写allocWithZone是为了防止调用这个方法创建
+ **/
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
+}
+/*
+ * 单例最好单例方法来创建, 如果用alloc, init就会调用多次
+ **/
++ (instancetype)shareLocationTool
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[super alloc] init];
+    });
+    return _instance;
+}
+
+/*
+ * 为了可以让别人用Copy方法
+ **/
+- (id)copyWithZone:(NSZone *)zone
+{
+    return _instance;
+}
+
+
+#pragma mark -- 以上是单例
+
 - (CLGeocoder *)geocoder
 {
     if (_geocoder == nil) {
