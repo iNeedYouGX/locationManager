@@ -296,17 +296,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = DKDGV92EG3;
+				DEVELOPMENT_TEAM = G583M5JELZ;
 				INFOPLIST_FILE = location/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "gxl999.--test";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.16168;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f6829da-d076-48d0-9930-28d7e7f16d8f";
-				PROVISIONING_PROFILE_SPECIFIER = PushProvisoningProfiles;
+				PROVISIONING_PROFILE_SPECIFIER = CPHDevelopment;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -315,16 +316,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G583M5JELZ;
 				INFOPLIST_FILE = location/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "gxl999.--test";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.16168;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ProductionProvisioning;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
